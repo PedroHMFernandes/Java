@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class exe1 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Digite uma vogal: ");
+		char vogal = sc.nextLine().charAt(0);
+		System.out.println(vogal);
+		
+		if (vogal == 'a') {
+			System.out.println("Abacaxi");
+		}
+		
+		else if (vogal == 'e') {
+			System.out.println("Epaminondas");
+		}
+		
+		else if (vogal == 'i') {
+			System.out.println("Epaminondas");
+		}
+		
+		else if (vogal == 'o') {
+			System.out.println("Epaminondas");
+		}
+		else if (vogal == 'e') {
+			System.out.println("Epaminondas");
+		}
+		
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;vogal&apos; in &apos;exe1.main(...)&apos; to &apos;letra&apos;&#x0D;&#x0A;- Original project: &apos;EControle_Java&apos;&#x0D;&#x0A;- Original element: &apos;exe1.main(String[]).vogal&apos;&#x0D;&#x0A;- Renamed element: &apos;vogal&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;vogal&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{exe1.java[exe1~main~\[QString;@vogal!182!214!187!191!C!0!false" name="letra" references="true" stamp="1709301163088" version="1.0"/>
+</session>
