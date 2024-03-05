@@ -13,7 +13,7 @@ public class Array {
 		Scanner sc = new Scanner(System.in);
 		
 		for(int i = 0; i < notas.length; i++) {
-			System.out.printf("%d� nota: ", i+1);
+			System.out.printf("%dª nota: ", i+1);
 			notas[i] = sc.nextDouble();
 		}
 		
