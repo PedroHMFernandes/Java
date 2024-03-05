@@ -7,7 +7,7 @@ public class Array {
 		double[] notas; // Declara uma variável do tipo vetor de "doubles"
 		notas = new double[20]; // Aloca memória para 20 elementos no vetor
 		
-		int[] pesos = {40, 20 , 30, 10}; // Declara e inicializa um vetor de quatro posições
+//		int[] pesos = {40, 20 , 30, 10}; - Declara e inicializa um vetor de quatro posições
 	
 		Scanner sc = new Scanner(System.in);
 		
