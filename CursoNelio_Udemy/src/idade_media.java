@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class idade_media {
+public class Idade_media {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -15,9 +15,10 @@ public class idade_media {
 		nome2 = sc.next();
 		idade2 = sc.nextInt();
 		
-		media_idades = (float)(idade1 + idade2)/2;
+		media_idades = (float)(idade1 + idade2) / 2;
 		
 		System.out.printf("A idade média de %s e %s é de %.1f anos\n", nome1, nome2, media_idades);
+		sc.close();
 	
 	}
 
