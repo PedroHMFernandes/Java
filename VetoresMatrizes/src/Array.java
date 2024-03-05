@@ -1,24 +1,25 @@
 import java.util.Locale;
+
 import java.util.Scanner;
 public class Array {
 	public static void main(String[] args) {
 		
 		Locale.setDefault(Locale.US);
-		double[] notas; // Declara uma variável do tipo vetor de "doubles"
-		notas = new double[20]; // Aloca memória para 20 elementos no vetor
+		double[] notas; // Declara uma variÃ¡vel do tipo vetor de "doubles"
+		notas = new double[20]; // Aloca memÃ³ria para 20 elementos no vetor
 		
-//		int[] pesos = {40, 20 , 30, 10}; - Declara e inicializa um vetor de quatro posições
+//		int[] pesos = {40, 20 , 30, 10}; - Declara e inicializa um vetor de quatro posiÃ§Ãµes
 	
 		Scanner sc = new Scanner(System.in);
 		
 		for(int i = 0; i < notas.length; i++) {
-			System.out.printf("%dÂª nota: ", i+1);
+			System.out.printf("%dï¿½ nota: ", i+1);
 			notas[i] = sc.nextDouble();
 		}
 		
-		for(double nota: notas) { // Associa uma variável a cata um dos elementos do array
+		for(double nota: notas) { // Associa uma variÃ¡vel a cata um dos elementos do array
 			System.out.printf("%.1f\n", nota);  
-		} // Não permite que o contendo do array seja modificado
+		} // NÃ£o permite que o conteÃºdo do array seja modificado
 	
 	sc.close();
 	}
