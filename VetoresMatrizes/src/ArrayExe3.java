@@ -23,9 +23,9 @@ public class ArrayExe3 {
 		do {
 			int resto = numeroInteiro % 2;
 			vetor[cont] = resto;
-			numeroInteiro /= (int) 2;
+			numeroInteiro /= (int) 2; // por serem int a div ja é inteira
 			cont++;
-		} while(cont < 8);
+		} while(numeroInteiro > 0);
 		
 		System.out.print("0b");
 		for(int i = vetor.length -1; i >= 0; i-- ) {
