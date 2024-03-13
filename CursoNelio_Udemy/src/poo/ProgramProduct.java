@@ -22,15 +22,19 @@ public class ProgramProduct {
 		System.out.print("Quantity in stock: ");
 		product1.quantity = sc.nextInt();
 		
-		product1.ShowProducts();
+		System.out.println("\nProduct data: " + product1.toString());
 		
-		System.out.print("Enter the number of products to be added in stock: ");
+		System.out.print("\nEnter the number of products to be added in stock: ");
 		int add = sc.nextInt();
 		product1.AddProducts(add);
+		System.out.println("\nUpdated data: " + product1.toString());
+
 		
-		System.out.print("Enter the number of products to be removed in stock: ");
+		System.out.print("\nEnter the number of products to be removed in stock: ");
 		int remove = sc.nextInt();
 		product1.RemoveProducts(remove);
+		System.out.println("\nUpdated data: " + product1.toString());
+
 		
 		sc.close();
 	}

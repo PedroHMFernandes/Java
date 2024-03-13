@@ -12,28 +12,20 @@ public class Product {
 	
 	public void AddProducts(int quantity) {
 		this.quantity += quantity;
-		ShowProducts(true);
 	}
 	
-	public void RemoveProducts(int quant) {
+	public void RemoveProducts(int quantity) {
 		this.quantity -= quantity;
-		ShowProducts(true);
 	}
-	
-	public void ShowProducts(boolean updated)  {
-		if(!updated) {
 		System.out.printf("Product data: %s, $ %.2f, %d unist, Total: $ %.2f\n",
-				name, price, quantity, totalValueInStock());
-		}
 		
-		else {
-			System.out.printf("Updated data: %s, $ %.2f, %d unist, Total: $ %.2f\n",
-					name, price, quantity, totalValueInStock());
-		}
-	}
-	
-	public void ShowProducts() {
-		ShowProducts(false);
-	}
-	
+	public String toString() {
+		return name 
+			+ ", $ " 
+			+ String.format("%.2f", price) 
+			+ ", " 
+			+ quantity 
+			+ " units, Total: $ " 
+			+ String.format("%.2f", totalValueInStock()); 
+	}	
 }
