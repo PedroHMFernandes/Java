@@ -17,7 +17,6 @@ public class Product {
 	public void RemoveProducts(int quantity) {
 		this.quantity -= quantity;
 	}
-		System.out.printf("Product data: %s, $ %.2f, %d unist, Total: $ %.2f\n",
 		
 	public String toString() {
 		return name 
