@@ -10,8 +10,8 @@ public class Employee {
 		return grossSalary - tax;
 	}
 	
-	public void increaseSalary(double amount) {
-		grossSalary *= (100 + amount) / 100;
+	public void increaseSalary(double percentage) {
+		grossSalary *= (100 + percentage) / 100;
 	}
 	
 	public String toString(){

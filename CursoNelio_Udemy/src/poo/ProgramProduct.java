@@ -10,29 +10,30 @@ public class ProgramProduct {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-
-		Product product1 = new Product();
-
+		
 		System.out.println("Enter product data:");	
 		
 		System.out.print("Name: ");
-		product1.name = sc.nextLine();
+		String name = sc.nextLine();
+		
 		System.out.print("Price: ");
-		product1.price = sc.nextDouble();
+		double price = sc.nextDouble();
+		
 		System.out.print("Quantity in stock: ");
-		product1.quantity = sc.nextInt();
+		
+		Product product1 = new Product(name, price);
 		
 		System.out.println("\nProduct data: " + product1.toString());
 		
 		System.out.print("\nEnter the number of products to be added in stock: ");
-		int add = sc.nextInt();
-		product1.AddProducts(add);
+		int quantity = sc.nextInt();
+		product1.AddProducts(quantity);
 		System.out.println("\nUpdated data: " + product1.toString());
 
 		
 		System.out.print("\nEnter the number of products to be removed in stock: ");
-		int remove = sc.nextInt();
-		product1.RemoveProducts(remove);
+		quantity = sc.nextInt();
+		product1.RemoveProducts(quantity);
 		System.out.println("\nUpdated data: " + product1.toString());
 
 		
