@@ -2,11 +2,17 @@ import java.util.Scanner;
 
 public class Lab3_3qtdeVogais {
 
-	static int qtdeVogais(String texto) {
-		char[] charArray = texto.toCharArray();
+	public static int qtdeVogais(String texto) {
+		/*
+		 * char[] charArray = texto.toCharArray();
+		 *  int contaVogal = 0;
+		 * 
+		 * for (char letra : charArray) { if (letra == 'a' || letra == 'e' || letra ==
+		 * 'i' || letra == 'o' || letra == 'u') { contaVogal++; } } return contaVogal;
+		 */
 		int contaVogal = 0;
-
-		for (char letra : charArray) {
+		for (int i = 0; i < texto.length(); i++) {
+			char letra = texto.charAt(i);
 			if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
 				contaVogal++;
 			}
@@ -19,9 +25,8 @@ public class Lab3_3qtdeVogais {
 		int contaDigito = 0;
 
 		for (char digito : charArray) {
-			if (digito == '0' || digito == '1' || digito == '2' || digito == '3' ||
-					digito == '4' ||digito == '5' || digito == '6' || digito == '7' 
-					||digito == '8' || digito == '9') {
+			if (digito == '0' || digito == '1' || digito == '2' || digito == '3' || digito == '4' || digito == '5'
+					|| digito == '6' || digito == '7' || digito == '8' || digito == '9') {
 				contaDigito++;
 			}
 		}

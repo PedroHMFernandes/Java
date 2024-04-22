@@ -1,4 +1,4 @@
-package entities;
+ package entities;
 
 public class Product {
 
@@ -40,7 +40,8 @@ public class Product {
 	public int getQuantity() {
 		return quantity;
 	}
-
+	
+	// Outros métodos
 	public double totalValueInStock() {
 		return price * quantity;
 	}
