@@ -39,6 +39,7 @@ public class EmployeeList {
 		this.salary = salary * (1 + percentage/100);
 	}
 
+	@Override
 	public String toString() {
 		return id + ", " + name + ", " + String.format("%.2f", salary);
 	}
