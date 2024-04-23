@@ -12,7 +12,7 @@ public class ProgramPensionato {
 
 		System.out.print("How many rooms will be rented? ");
 		int roomsNum = sc.nextInt();
-
+		
 		for (int i = 0; i < roomsNum; i++) {
 			System.out.printf("Rent #%d:%n", i + 1);
 			System.out.print("Name: ");
