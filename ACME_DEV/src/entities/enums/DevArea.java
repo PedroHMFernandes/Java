@@ -1,0 +1,12 @@
+package entities.enums;
+
+public enum DevArea {
+	FRONT_END,
+	BACK_END,
+	ENGENHEIRO_DE_QUALIDADE,
+	PRODUCT_OWNER,
+	SCRUM_MASTER,
+	ARQUITETO_DE_SOFTWARE,
+	ANALISTA_DE_DADOS,
+	UX_UI
+}
