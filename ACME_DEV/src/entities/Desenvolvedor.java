@@ -1,10 +1,14 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import entities.enums.DevArea;
 
 public class Desenvolvedor {
 	private String nome;
 	private DevArea area;
+	private List<Requisito> listaTarefas = new ArrayList<>();
 	
 	public Desenvolvedor(String nome) {
 		this.nome = nome;
@@ -14,6 +18,8 @@ public class Desenvolvedor {
 		this.nome = nome;
 		this.area = area;
 	}
+	
+	
 	
 	public String getNome() {
 		return nome;

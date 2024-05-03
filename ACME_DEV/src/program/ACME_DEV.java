@@ -11,7 +11,7 @@ public class ACME_DEV {
 
 		Desenvolvedor dev1 = new Desenvolvedor("Pedro", DevArea.valueOf("BACK_END"));
 		Desenvolvedor dev2 = new Desenvolvedor("Felipe", DevArea.valueOf("FRONT_END"));
-		Desenvolvedor dev3 = new Desenvolvedor("Ronaldo", DevArea.valueOf("ANALISTA_DE_DADOS"));
-
+		Desenvolvedor dev3 = new Desenvolvedor("Ronaldo", DevArea.valueOf("UX_UI"));
+		
 	}
 }
