@@ -19,12 +19,7 @@ out/
 *.iws
 
 #Eclipse
-.settings/
-bin/
 tmp/
-.metadata
-.classpath
-.project
 *.tmp
 *.bak
 *.swp
