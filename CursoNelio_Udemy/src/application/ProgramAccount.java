@@ -18,14 +18,14 @@ public class ProgramAccount {
 		System.out.println(bacc.getBalance());
 		   
 		// UPCASTING
-	
+		// Atribuir um objeto da subclasse para a superclasse
 		Account acc1= bacc;
 		Account acc2 = new BusinessAccount(1004, "Roberto", 0.0, 200.0);
 		Account acc3 = new SavingsAccount(1004, "Lucca", 0.0, 0.01);
 		
 		// DOWNCASTING
-		
-		BusinessAccount acc4 = (BusinessAccount) acc2;  
+		// Atribuir um objeto da superclasse para a subclasse
+		BusinessAccount acc4 = (BusinessAccount) acc1;  
 		acc4.loan(100.0);
 		
 		// BusinessAccount acc5 = (BusinessAccount) acc3;
