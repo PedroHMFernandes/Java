@@ -11,9 +11,8 @@ public class Motorista extends Usuario {
 		super();
 	}
 
-	public Motorista(String nome, String endereco, String email, String telefone, String senha, List<Viagem> viagens) {
+	public Motorista(String nome, String endereco, String email, String telefone, String senha) {
 		super(nome, endereco, email, telefone, senha);
-		this.viagens = viagens;
 	}
 
 	public void cadastrarViagem(Viagem viagem) {

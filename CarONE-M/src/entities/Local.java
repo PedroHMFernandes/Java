@@ -1,6 +1,30 @@
 package entities;
 
 public class Local {
-	private String endereco;
+	private String descricao;
 	private Integer km;
+	
+	public Local() {
+	}
+	
+	public Local(String descricao, Integer km) {
+		this.descricao = descricao;
+		this.km = km;
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public Integer getKm() {
+		return km;
+	}
+	public void setKm(Integer km) {
+		this.km = km;
+	}
+
+	
+	
 }
