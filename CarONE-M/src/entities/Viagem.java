@@ -7,8 +7,8 @@ public class Viagem {
 	private Integer quantidadeDeLugares;
 	private Local pontoDePartida;
 	private Local destino;
-	private Boolean progresso = false;
 	private Motorista motorista;
+	private Boolean progresso = false;
 	private List<Local> trajeto = new ArrayList<Local>();
 	private List<Passageiro> passageiros = new ArrayList<Passageiro>();
 
@@ -20,16 +20,6 @@ public class Viagem {
 		this.pontoDePartida = pontoDePartida;
 		this.destino = destino;
 		this.motorista = motorista;
-	}
-
-	public Viagem(Integer quantidadeDeLugares, Local pontoDePartida, Local destino, List<Local> trajeto,
-			Motorista motorista, List<Passageiro> passageiros) {
-		this.quantidadeDeLugares = quantidadeDeLugares;
-		this.pontoDePartida = pontoDePartida;
-		this.destino = destino;
-		this.trajeto = trajeto;
-		this.motorista = motorista;
-		this.passageiros = passageiros;
 	}
 
 	public Integer getQuantidadeDeLugares() {
@@ -72,23 +62,20 @@ public class Viagem {
 		this.motorista = motorista;
 	}
 
+	public boolean getProgresso() {
+		return progresso;
+	}
+
+	public void concluirViagem() {
+		progresso = true;
+	}
+
 	public List<Passageiro> getPassageiros() {
 		return passageiros;
 	}
 
-	public String getProgresso() {
-		if (progresso) {
-			return "concluída";
-		}
-		return "a fazer";
-	}
-
-	public void concluirViagem() {
-		this.progresso = true;
-	}
-
-	public void setPassageiros(List<Passageiro> passageiros) {
-		this.passageiros = passageiros;
+	public void addPassageiros(Passageiro passageiro) {
+		passageiros.add(passageiro);
 	}
 
 }

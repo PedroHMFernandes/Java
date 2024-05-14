@@ -1,11 +1,16 @@
 package entities;
 
-public abstract class Usuario {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Usuario {
 	private String nome;
 	private String endereco;
 	private String email;
 	private String telefone;
 	private String senha;
+	private List<Viagem> viagens = new ArrayList<Viagem>();
+	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 
 	public Usuario() {
 	}
@@ -58,6 +63,25 @@ public abstract class Usuario {
 		this.senha = senha;
 	}
 	
-	
+	public void cadastrarViagem(Viagem viagem) {
+		viagens.add(viagem);
+	}
 
+	public List<Viagem> getViagens() {
+		return viagens;
+	}
+
+	public void addViagem(Viagem viagem) {
+		viagens.add(viagem);
+	}
+
+	public List<Avaliacao> getAvaliacoes() {
+		return avaliacoes;
+	}
+
+	public void addAvaliacao(Avaliacao avaliacao) {
+		avaliacoes.add(avaliacao);
+	}
+	
+	
 }

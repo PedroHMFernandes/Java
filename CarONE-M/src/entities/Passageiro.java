@@ -3,9 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Passageiro extends Usuario {
-	private List<Viagem> viagens = new ArrayList<Viagem>();
-	
+public class Passageiro extends Usuario {	
 	public Passageiro() {
 		super();
 	}
