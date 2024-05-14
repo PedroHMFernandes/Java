@@ -11,30 +11,45 @@ public class Motorista extends Usuario {
 	public Motorista(String nome, String endereco, String email, String telefone, String senha) {
 		super(nome, endereco, email, telefone, senha);
 	}
-	
+
 	public List<Passageiro> consultarPassageiros(Viagem viagem) {
-		if(getViagens().contains(viagem)) {
+		if (getViagens().contains(viagem)) {
 			return viagem.getPassageiros();
 		}
 		return null;
 	}
-	
+
 	public double getMediaDeAvaliacoes() {
 		double soma = 0.0;
 		int qtdAvaliacoes = 0;
-		for(Avaliacao avaliacao: getAvaliacoes()) {
-			soma += avaliacao.getNota();
-			qtdAvaliacoes += 1;
+		for (Viagem viagem : this.getViagens()) {
+			for (Avaliacao avaliacao : viagem.getAvaliacoes()) {
+				soma += avaliacao.getNota();
+				qtdAvaliacoes += 1;
+			}
 		}
-		double media = soma / qtdAvaliacoes;
-		return media;
+		if (qtdAvaliacoes > 0) {
+			double media = soma / qtdAvaliacoes;
+			return media;
+		} else {
+			return 0.0;
+		}
 	}
-	
-	public List<String> getComentarios() {
-		List<String> comentarios = new ArrayList<String>();
-		for(Avaliacao avaliacao: getAvaliacoes()) {
-			comentarios.add(avaliacao.getComentario());
+
+	public void exibirComentarios() {
+		for (Viagem viagem : this.getViagens()) {
+			System.out.println(viagem.resumoViagem());
+			if (viagem.getAvaliacoes().size() > 0) {
+				for (Avaliacao avaliacao : viagem.getAvaliacoes()) {
+					System.out.println("Comentarios:");
+					if (avaliacao.getComentario() != "" || avaliacao.getComentario() != null) {
+						System.out.println(avaliacao.getComentario());
+					} else {
+						System.out.println("-- avaliação sem comentarios --");
+					}
+				}
+			} else
+				System.out.println("sem comentários ainda...");
 		}
-		return comentarios;
 	}
 }
