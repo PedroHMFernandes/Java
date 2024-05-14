@@ -10,7 +10,6 @@ public class Usuario {
 	private String telefone;
 	private String senha;
 	private List<Viagem> viagens = new ArrayList<Viagem>();
-	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 
 	public Usuario() {
 	}
@@ -62,7 +61,7 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 	public void cadastrarViagem(Viagem viagem) {
 		viagens.add(viagem);
 	}
@@ -74,14 +73,4 @@ public class Usuario {
 	public void addViagem(Viagem viagem) {
 		viagens.add(viagem);
 	}
-
-	public List<Avaliacao> getAvaliacoes() {
-		return avaliacoes;
-	}
-
-	public void addAvaliacao(Avaliacao avaliacao) {
-		avaliacoes.add(avaliacao);
-	}
-	
-	
 }
