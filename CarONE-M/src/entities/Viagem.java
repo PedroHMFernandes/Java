@@ -20,6 +20,7 @@ public class Viagem {
 		this.pontoDePartida = pontoDePartida;
 		this.destino = destino;
 		this.motorista = motorista;
+		motorista.addViagem(this);
 	}
 
 	public Integer getQuantidadeDeLugares() {
@@ -60,6 +61,7 @@ public class Viagem {
 
 	public void setMotorista(Motorista motorista) {
 		this.motorista = motorista;
+		motorista.addViagem(this);
 	}
 
 	public boolean getProgresso() {

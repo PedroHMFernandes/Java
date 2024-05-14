@@ -2,6 +2,7 @@ package application;
 
 import java.util.Scanner;
 
+import entities.Avaliacao;
 import entities.Local;
 import entities.Motorista;
 import entities.Passageiro;
@@ -21,7 +22,8 @@ public class Program {
 		System.out.println("** CarONE-M Motorista**");
 		System.out.println("1) Cadastrar nova viagem");
 		System.out.println("2) Consultar passageiros");
-		System.out.println("3) Sair");
+		System.out.println("3) Verificar avaliações");
+		System.out.println("4) Sair");
 		System.out.print("Selecione uma opção: ");
 	}
 
@@ -42,7 +44,8 @@ public class Program {
 		Usuario usuario = null;
 		Passageiro passageiro = null;
 		Motorista motorista = null;
-
+		Passageiro p1 = new Passageiro();
+		p1.setNome("Robirso");
 		// Programa principal
 		while (true) {
 			mostrarMenuInicial();
@@ -140,30 +143,48 @@ public class Program {
 											// Adicionar parada no trajeto
 											char addParada;
 											do {
-											System.out.println("Adicionar parada (s/n): ");
+												System.out.println("Adicionar parada (s/n): ");
 												addParada = sc.next().toLowerCase().charAt(0);
-											if (addParada == 's') {
-												sc.nextLine();
-												System.out.println("Parada: ");
-												System.out.print("Descricao: ");
-												String descricaoParada = sc.nextLine();
-												System.out.print("Km: ");
-												int kmParada = sc.nextInt();
-												Local parada = new Local(descricaoParada, kmParada);
-												viagem.addLocal(parada);
+												if (addParada == 's') {
+													sc.nextLine();
+													System.out.println("Parada: ");
+													System.out.print("Descricao: ");
+													String descricaoParada = sc.nextLine();
+													System.out.print("Km: ");
+													int kmParada = sc.nextInt();
+													Local parada = new Local(descricaoParada, kmParada);
+													viagem.addLocal(parada);
 												}
-											} while(addParada != 'n');
-											Viagem novaViagem = new Viagem();
+											} while (addParada != 'n');
+
 										} else if (opcaoMotorista == 2) {
 											System.out.println("Consultar passageiros");
+											for (Viagem viagem : motorista.getViagens()) {
+												System.out.println(viagem.getPontoDePartida().getDescricao() + "--->"
+														+ viagem.getDestino().getDescricao());
+												for (Passageiro pass : viagem.getPassageiros()) {
+													System.out.println("\t" + pass.getNome());
+												}
+											}
+											System.out.println();
 										} else if (opcaoMotorista == 3) {
+											System.out.println("Verificar avaliações");
+											for (Avaliacao avaliacao : motorista.getAvaliacoes()) {
+												System.out.println(avaliacao.getUsuario() + ":" + avaliacao.getNota());
+												if (avaliacao.getComentario() != null) {
+													System.out.println("Comentário: " + avaliacao.getComentario());
+												}
+											}
+											System.out.println("Nota geral: " + motorista.getMediaDeAvaliacoes());
+
+										} else if (opcaoMotorista == 4) {
 											System.out.println("\nSessão motorista encerrada.\n");
 											break;
 										}
 									}
 								}
 							}
-							System.out.println("Sair (y)?");
+							System.out.println("Sair da conta (y)?");
 							char sair = sc.next().toLowerCase().charAt(0);
 							if (sair == 'y') {
 								break;
