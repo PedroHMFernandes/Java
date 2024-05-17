@@ -49,10 +49,10 @@ public class Program {
 		m1.setNome("Jão");
 
 		// locais
-		Local l1 = new Local("São Paulo", 290);
-		Local l2 = new Local("São José do Rio Pardo", 0);
-		Local l3 = new Local("Campinas", 180);
-		Local l4 = new Local("Mogi Mirim", 100);
+		Local l1 = new Local("São Paulo", 0.0, 290.0);
+		Local l2 = new Local("São José do Rio Pardo", 0.0, 0.0);
+		Local l3 = new Local("Campinas", 0.0, 180.0);
+		Local l4 = new Local("Mogi Mirim", 0.0, 100.0);
 
 		boolean cadastroRealizado = false; // variável que verifica se o cadastro ja foi realizado
 		// Programa principal
@@ -79,19 +79,21 @@ public class Program {
 					String senha = sc.nextLine();
 					usuario = new Usuario(nome, endereco, email, telefone, senha);
 					passageiro = new Passageiro(nome, endereco, email, telefone, senha);
+					motorista = new Motorista(nome, endereco, email, telefone, senha);
+					cadastroRealizado = true;
+					System.out.println();
+					
 					// Viagem v1 = new Viagem(3, l1, l2, m1);
 					// Viagem v2 = new Viagem(3, l2, l1, m1);
 					// Viagem v3 = new Viagem(3, l2, l3, m1);
 					// Viagem v4 = new Viagem(3, l4, l1, m1);
 					// v2.concluirViagem();
-					// v4.concluirViagem();	
+					// v4.concluirViagem();
 					// passageiro.addViagem(v2);
 					// passageiro.addViagem(v1);
 					// passageiro.addViagem(v3);
 					// passageiro.addViagem(v4);
-					// motorista = new Motorista(nome, endereco, email, telefone, senha);
-					// cadastroRealizado = true;
-					System.out.println();
+					
 				} else {
 					System.out.println("Cadastro já realizado.\n");
 				}
@@ -138,7 +140,8 @@ public class Program {
 											System.out.print("\nEntre com o índice da viagem a avaliar: ");
 											int indiceViagem = sc.nextInt();
 											System.out.println();
-											System.out.println(passageiro.getViagens().get(indiceViagem).resumoViagem());
+											System.out
+													.println(passageiro.getViagens().get(indiceViagem).resumoViagem());
 											System.out.print("Nota [0 - 5]: ");
 											int nota = sc.nextInt();
 											System.out.print("Comentario: ");
@@ -147,8 +150,6 @@ public class Program {
 											Avaliacao avaliacao = new Avaliacao(nota, comentario);
 											passageiro.getViagens().get(indiceViagem).addAvaliacao(avaliacao);
 
-											
-											
 										} else if (opcaoPassageiro == 3) {
 											System.out.println("\nSessão passageiro encerrada.\n");
 											break;
@@ -175,19 +176,22 @@ public class Program {
 											System.out.println("PONTO DE PARTIDA");
 											System.out.print("Descricao: ");
 											String descricaoPartida = sc.nextLine();
-											System.out.print("Digite o Km: ");
-											int kmPartida = sc.nextInt();
-											sc.nextLine();
-											Local partida = new Local(descricaoPartida, kmPartida);
+											System.out.print("Digite a longitude: ");
+											double xPartida = sc.nextDouble();
+											System.out.print("Digite a latitude: ");
+											double yPartida = sc.nextDouble();
+											Local partida = new Local(descricaoPartida, xPartida, yPartida);
 
 											// Local: Destino
 											System.out.println("DESTINO ");
+											sc.nextLine();
 											System.out.print("Descricao: ");
 											String descricaoDestino = sc.nextLine();
-											System.out.print("Digite o Km: ");
-											int kmDestino = sc.nextInt();
-											sc.nextLine();
-											Local destino = new Local(descricaoDestino, kmDestino);
+											System.out.print("Digite a longitude: ");
+											double xDestino = sc.nextDouble();
+											System.out.print("Digite a latitude: ");
+											double yDestino = sc.nextDouble();
+											Local destino = new Local(descricaoPartida, xDestino, yDestino);
 											Viagem viagem = new Viagem(qtdLugares, partida, destino, motorista);
 											// Adicionar parada no trajeto
 											char addParada;
@@ -196,12 +200,14 @@ public class Program {
 												addParada = sc.next().toLowerCase().charAt(0);
 												if (addParada == 's') {
 													sc.nextLine();
-													System.out.println("Parada: ");
+													System.out.println("PARADA ");
 													System.out.print("Descricao: ");
 													String descricaoParada = sc.nextLine();
-													System.out.print("Km: ");
-													int kmParada = sc.nextInt();
-													Local parada = new Local(descricaoParada, kmParada);
+													System.out.print("Digite a longitude: ");
+													double xParada = sc.nextDouble();
+													System.out.print("Digite a latitude: ");
+													double yParada = sc.nextDouble();
+													Local parada = new Local(descricaoParada, xParada, yParada);
 													viagem.addLocal(parada);
 												}
 											} while (addParada != 'n');

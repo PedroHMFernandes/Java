@@ -1,9 +1,10 @@
 package entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Motorista extends Usuario {
+
+	// Construtores
 	public Motorista() {
 		super();
 	}
@@ -12,6 +13,7 @@ public class Motorista extends Usuario {
 		super(nome, endereco, email, telefone, senha);
 	}
 
+	// Consular passageiro de uma viagem específica
 	public List<Passageiro> consultarPassageiros(Viagem viagem) {
 		if (getViagens().contains(viagem)) {
 			return viagem.getPassageiros();
@@ -19,7 +21,8 @@ public class Motorista extends Usuario {
 		return null;
 	}
 
-	public double getMediaDeAvaliacoes() {
+	// Retornar a média das avaliações de todas as viagens
+	public Double getMediaDeAvaliacoes() {
 		double soma = 0.0;
 		int qtdAvaliacoes = 0;
 		for (Viagem viagem : this.getViagens()) {
@@ -32,10 +35,11 @@ public class Motorista extends Usuario {
 			double media = soma / qtdAvaliacoes;
 			return media;
 		} else {
-			return 0.0;
+			return null;
 		}
 	}
 
+	// Exibir os comentários das avaliações de cada viagem
 	public void exibirComentarios() {
 		for (Viagem viagem : this.getViagens()) {
 			System.out.println(viagem.resumoViagem());

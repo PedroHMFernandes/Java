@@ -14,6 +14,7 @@ public class Viagem {
 	private List<Passageiro> espera = new ArrayList<Passageiro>();
 	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 
+	// Contrustores
 	public Viagem() {
 	}
 
@@ -25,6 +26,7 @@ public class Viagem {
 		motorista.addViagem(this);
 	}
 
+	// Getters e Setters
 	public Integer getQuantidadeDeLugares() {
 		return quantidadeDeLugares;
 	}
@@ -49,14 +51,6 @@ public class Viagem {
 		this.destino = destino;
 	}
 
-	public List<Local> getTrajeto() {
-		return trajeto;
-	}
-
-	public void addLocal(Local local) {
-		trajeto.add(local);
-	}
-
 	public Motorista getMotorista() {
 		return motorista;
 	}
@@ -69,7 +63,46 @@ public class Viagem {
 	public boolean getProgresso() {
 		return progresso;
 	}
-	
+
+	public List<Local> getTrajeto() {
+		return trajeto;
+	}
+
+	public List<Passageiro> getPassageiros() {
+		return passageiros;
+	}
+
+	public List<Passageiro> getEspera() {
+		return espera;
+	}
+
+	public List<Avaliacao> getAvaliacoes() {
+		return avaliacoes;
+	}
+
+	// Métodos para adicionar nas listas
+	public void addLocal(Local local) {
+		trajeto.add(local);
+	}
+
+	public void addPassageiros(Passageiro passageiro) {
+		if (quantidadeDeLugares > 0){
+			passageiros.add(passageiro);
+			quantidadeDeLugares--;
+		} else {
+			System.out.println("Já está lotado.");
+		}
+	}
+
+	public void addAvaliacao(Avaliacao avaliacao) {
+		avaliacoes.add(avaliacao);
+	}
+
+	public void addEspera(Passageiro passageiro) {
+		espera.add(passageiro);
+	}
+
+	// Exibir o progresso da viagem (concluída ou a fazer)
 	public void exibirProgresso() {
 		if (progresso) {
 			System.out.println(", Progresso: concluído");
@@ -77,19 +110,13 @@ public class Viagem {
 			System.out.println(", Progresso: a fazer");
 		}
 	}
-	
+
+	// Concluir a viagem
 	public void concluirViagem() {
 		progresso = true;
 	}
 
-	public List<Passageiro> getPassageiros() {
-		return passageiros;
-	}
-
-	public void addPassageiros(Passageiro passageiro) {
-		passageiros.add(passageiro);
-	}
-	
+	// Exibir passageiros da viagem
 	public void exibirPassageiros() {
 		if (passageiros.size() > 0) {
 			for (Passageiro pass : passageiros) {
@@ -99,15 +126,8 @@ public class Viagem {
 			System.out.println("  - Sem passageiros ainda...");
 		}
 	}
-	
-	public List<Avaliacao> getAvaliacoes() {
-		return avaliacoes;
-	}
 
-	public void addAvaliacao(Avaliacao avaliacao) {
-		avaliacoes.add(avaliacao);
-	}
-	
+	// Método que retorna a partida e o destino da viagem
 	public String resumoViagem() {
 		return pontoDePartida.getDescricao() + " --> " + destino.getDescricao();
 	}
