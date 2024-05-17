@@ -11,6 +11,7 @@ public class Viagem {
 	private Boolean progresso = false;
 	private List<Local> trajeto = new ArrayList<Local>();
 	private List<Passageiro> passageiros = new ArrayList<Passageiro>();
+	private List<Passageiro> espera = new ArrayList<Passageiro>();
 	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 
 	public Viagem() {

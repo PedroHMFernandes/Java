@@ -2,7 +2,8 @@ package entities;
 
 public class Local {
 	private String descricao;
-	private Integer km;
+	private Integer x;
+	private Integer y;
 	
 	public Local() {
 	}
